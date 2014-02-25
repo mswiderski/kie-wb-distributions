@@ -69,8 +69,7 @@
       <property name="hibernate.hbm2ddl.auto" value="update"/>
       <property name="hibernate.show_sql" value="false"/>
 
-      <property name="hibernate.dialect"
-                value="org.hibernate.dialect.DerbyTenSevenDialect"/>
+      <property name="hibernate.dialect" value="org.hibernate.dialect.H2Dialect"/>
 
       <!-- BZ 841786: AS7/EAP 6/Hib 4 uses new (sequence) generators which seem to cause problems -->
       <property name="hibernate.id.new_generator_mappings"
@@ -84,14 +83,12 @@
       <property name="hibernate.transaction.factory_class"
                 value="org.hibernate.transaction.CMTTransactionFactory"/>
 
-      <property name="hibernate.temp.use_jdbc_metadata_defaults"
-                value="false"/>
+      <property name="hibernate.temp.use_jdbc_metadata_defaults" value="false"/>
 
-      <property name="jta.UserTransaction"
-                value="jta/UserTransaction"/>
+      <property name="jta.UserTransaction" value="jta/UserTransaction"/>
 
-      <property name="hibernate.globally_quoted_identifiers"
-                value="true"/>
+      <!--<property name="hibernate.globally_quoted_identifiers"-->
+                <!--value="true"/>-->
 
     </properties>
   </persistence-unit>
