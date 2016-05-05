@@ -211,6 +211,12 @@
       <artifactId>kie-identity-session-provider</artifactId>
     </dependency>
 
+    <!-- security for kie server client interaction -->
+    <dependency>
+      <groupId>org.kie</groupId>
+      <artifactId>kie-security</artifactId>
+    </dependency>
+
     <!-- dependencies added because of new illegal transitive dependency check -->
 
     <dependency>
@@ -239,39 +245,6 @@
       <groupId>org.slf4j</groupId>
       <artifactId>jcl-over-slf4j</artifactId>
       <scope>provided</scope>
-    </dependency>
-
-    <!-- jBPM -->
-    <dependency>
-      <groupId>org.jbpm</groupId>
-      <artifactId>jbpm-human-task-audit</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>org.jbpm</groupId>
-      <artifactId>jbpm-human-task-core</artifactId>
-      <exclusions>
-        <exclusion>
-          <groupId>javax.activation</groupId>
-          <artifactId>activation</artifactId>
-        </exclusion>
-        <exclusion>
-          <groupId>javax.mail</groupId>
-          <artifactId>mail</artifactId>
-        </exclusion>
-      </exclusions>
-    </dependency>
-
-    <dependency>
-      <groupId>org.jbpm</groupId>
-      <artifactId>jbpm-services-api</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>org.jbpm</groupId>
-      <artifactId>jbpm-kie-services</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>org.jbpm</groupId>
-      <artifactId>jbpm-services-cdi</artifactId>
     </dependency>
 
     <!-- jBPM Console Panels -->
@@ -385,33 +358,10 @@
       <artifactId>kie-server-controller-api</artifactId>
     </dependency>
 
-    <!-- KIE REST -->
-    <dependency>
-      <groupId>org.kie.remote</groupId>
-      <artifactId>kie-remote-services</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>org.jbpm</groupId>
-      <artifactId>jbpm-console-ng-rest</artifactId>
-    </dependency>
-
     <!-- Guvnor REST -->
     <dependency>
       <groupId>org.guvnor</groupId>
       <artifactId>guvnor-rest-backend</artifactId>
-    </dependency>
-
-    <!-- Timer dependencies -->
-    <dependency>
-      <groupId>org.quartz-scheduler</groupId>
-      <artifactId>quartz</artifactId>
-      <scope>runtime</scope>
-      <exclusions>
-        <exclusion>
-          <groupId>javax.transaction</groupId>
-          <artifactId>jta</artifactId>
-        </exclusion>
-      </exclusions>
     </dependency>
 
     <!-- Models held within Drools -->
@@ -1570,7 +1520,7 @@
       <groupId>org.uberfire</groupId>
       <artifactId>uberfire-security-management-wildfly</artifactId>
     </dependency>
-    
+
     <!-- test -->
     <dependency>
       <groupId>org.reflections</groupId>
@@ -1621,8 +1571,8 @@
           <configuration>
             <deploy>${project.build.directory}/gwt-symbols-deploy</deploy>
             <localWorkers>${gwt.compiler.localWorkers}</localWorkers>
-            <extraJvmArgs>${gwt.memory.settings} -XX:CompileThreshold=7000 -Derrai.jboss.home=${errai.jboss.home} 
-              -Derrai.server.classOutput=${project.build.outputDirectory} -Dorg.kie.demo=true 
+            <extraJvmArgs>${gwt.memory.settings} -XX:CompileThreshold=7000 -Derrai.jboss.home=${errai.jboss.home}
+              -Derrai.server.classOutput=${project.build.outputDirectory} -Dorg.kie.demo=true
               -Dorg.kie.clean.onstartup=true -Dorg.uberfire.nio.git.ssh.enabled=false -Djava.util.prefs.syncInterval=2000000
               -Dorg.uberfire.async.executor.safemode=true
             </extraJvmArgs>

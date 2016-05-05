@@ -147,10 +147,6 @@ public class AppSetup {
                     RolesRegistry.get().registerRole( role );
                 }
             }
-            // rest of jbpm wb bootstrap
-            administrationService.bootstrapConfig();
-            administrationService.bootstrapDeployments();
-
             // notify components that bootstrap is completed to start post setups
             applicationStartedEvent.fire( new ApplicationStarted() );
         } catch ( final Exception e ) {
